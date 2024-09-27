@@ -28,7 +28,11 @@ namespace RANSANMOI
                     Console.WriteLine("Error at"+ ex);
                 }
             }
-            Console.WriteLine("Game Over!");
+            if(SnakeControl.Collied())
+            {
+             Console.WriteLine("Game Over!"); 
+            }
+            
                
                 
                 
