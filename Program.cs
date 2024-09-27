@@ -7,21 +7,22 @@ namespace RANSANMOI
         {
            Thread _game = new Thread(SnakeControl.ListenKey);
             _game.Start();
+            SnakeControl snakeControl = new SnakeControl();
             while(true)
             {
                 try
                 {
                 Console.Clear();
-                SnakeControl.Drawboard();
-                SnakeControl.setUpBoard();
-                SnakeControl.MoveSnakeHead();
-                SnakeControl.EatFood();
-                SnakeControl.SpawnBody();
-                SnakeControl.PopUpfood();
-                SnakeControl.ShowPoint();
-                SnakeControl.Collied();
+                snakeControl.Drawboard();
+                snakeControl.setUpBoard();
+                snakeControl.MoveSnakeHead();
+                snakeControl.EatFood();
+                snakeControl.SpawnBody();
+                snakeControl.PopUpfood();
+                snakeControl.ShowPoint();
+                snakeControl.Collied();
                 //Task.Delay(SnakeControl.speed).Wait();
-                Thread.Sleep(SnakeControl.speed);
+                Thread.Sleep(snakeControl.speed);
                 }
                 catch (Exception ex)
                 {

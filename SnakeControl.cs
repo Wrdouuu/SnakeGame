@@ -6,13 +6,13 @@ namespace RANSANMOI
 {
     public class SnakeControl
     {
-        public static Point food = new Point(8, 8);
-        public static bool foodExist = false;
+        public Point food = new Point(8, 8);
+        public bool foodExist = false;
         public static int speed = 1000;
         public static int row = 20;
         public static int col = 40;
         public static string direction = "Right";
-        public static int score;
+        public int score;
 
         public static Point[] body = new Point[1]
         {
@@ -21,7 +21,7 @@ namespace RANSANMOI
         public static Point _head = new Point(10, 10);
         public static string[,] board = new string[row, col];
         // ve cac doi tuong tren ban do (bien, ran, moi)
-        public static void Drawboard()
+        public void Drawboard()
         {
             for (int i = 0; i < row; i++)
             {
@@ -63,7 +63,7 @@ namespace RANSANMOI
             }
         }
         // kiem tra va cham voi cac canh cua ban do
-        public static void MoveSnakeHead()
+        public void MoveSnakeHead()
         {
             switch (direction)
             {
@@ -133,7 +133,7 @@ namespace RANSANMOI
             }
         }
         // hien thi ra ban do
-        public static void setUpBoard()
+        public void setUpBoard()
         {
             for (int i = 0; i < row; i++)
             {
@@ -145,7 +145,7 @@ namespace RANSANMOI
             }
         }
         // hien thi thuc an
-        public static void PopUpfood()
+        public void PopUpfood()
         {
             Random random = new Random();
             int x = random.Next(1, row - 1);
@@ -161,7 +161,7 @@ namespace RANSANMOI
             }
         }
         // tang size cua mang, khoi tao nut moi
-        public static void EatFood()
+        public void EatFood()
         {
             if (_head.X == food.X && _head.Y == food.Y)
             {
@@ -173,7 +173,7 @@ namespace RANSANMOI
             }
         }
         // tang do dai than ran
-        public static void SpawnBody()
+        public void SpawnBody()
         {
             for (int i = body.Length - 1; i > 0; i--)
             {
@@ -187,13 +187,13 @@ namespace RANSANMOI
             }
         }
         // hien thi diem
-        public static void ShowPoint()
+        public void ShowPoint()
         {
             Console.WriteLine($"Score: {score}");
         }
 
         //Game Over
-        public static void Collied()
+        public void Collied()
         {
             for (int i = 1; i < body.Length; i++)
         {
