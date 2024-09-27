@@ -13,7 +13,6 @@ namespace RANSANMOI
         public static int col = 40;
         public static string direction = "Right";
         public static int score;
-        public static bool gamerunning = true;
 
         public static Point[] body = new Point[1]
         {
@@ -194,18 +193,19 @@ namespace RANSANMOI
         }
 
         //Game Over
-        public static bool Collied()
+        public static void Collied()
         {
-            if ( _head.X == body.Length && _head.Y == body.Length)
+            for (int i = 1; i < body.Length; i++)
+        {
+            if ( _head.X == body[i].X && _head.Y == body[i].Y)
            {
-            return gamerunning = false;
+            Console.WriteLine("Game Over!");
+            Environment.Exit(0);
            }
-           else
-           {
-            return gamerunning = true;
-           }
+        
            
             
         }
     }
+}
 }

@@ -5,10 +5,9 @@ namespace RANSANMOI
     {
         static void Main(string[] args)
         {
-             bool gameOver = false;
-            Thread _game = new Thread(SnakeControl.ListenKey);
+           Thread _game = new Thread(SnakeControl.ListenKey);
             _game.Start();
-            while(!gameOver)
+            while(true)
             {
                 try
                 {
@@ -20,6 +19,7 @@ namespace RANSANMOI
                 SnakeControl.SpawnBody();
                 SnakeControl.PopUpfood();
                 SnakeControl.ShowPoint();
+                SnakeControl.Collied();
                 //Task.Delay(SnakeControl.speed).Wait();
                 Thread.Sleep(SnakeControl.speed);
                 }
@@ -28,21 +28,8 @@ namespace RANSANMOI
                     Console.WriteLine("Error at"+ ex);
                 }
             }
-            if(SnakeControl.Collied())
-            {
-             Console.WriteLine("Game Over!"); 
-            }
-            
-               
-                
-                
             
             
-            
-            
-            
-
-             
         }
     }
 }
