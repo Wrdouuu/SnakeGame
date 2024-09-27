@@ -22,7 +22,7 @@ namespace RANSANMOI
                 snakeControl.ShowPoint();
                 snakeControl.Collied();
                 //Task.Delay(SnakeControl.speed).Wait();
-                Thread.Sleep(snakeControl.speed);
+                Thread.Sleep(SnakeControl.speed);
                 }
                 catch (Exception ex)
                 {
